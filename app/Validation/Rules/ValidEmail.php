@@ -10,6 +10,6 @@ class ValidEmail extends AbstractRule
     
     public function validate($input) : bool
     {
-        return User::where('email', $input)->exists();
+        return User::where('email', strtolower($input))->exists();
     }
 }
