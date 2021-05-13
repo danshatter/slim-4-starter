@@ -23,20 +23,11 @@ class Validator
 
         foreach ($rules as $field => $rule) {
             try {
-                $rule->assert($data[$field]);
+                $rule->setName($this->formatErrorField($field))->assert($data[$field]);
                 
                 $validData[$field] = $data[$field];
             } catch (NestedValidationException $e) {
-                $this->errors[$field] = $e->getMessages([
-                    'alpha' => $this->formatErrorField($field).' must contain only letters "(a-z)"',
-                    'noWhitespace' => $this->formatErrorField($field).' must not contain white spaces',
-                    'alnum' => $this->formatErrorField($field).' must contain only letters "(a-z)", digits "(0-9)"',
-                    'email' => $this->formatErrorField($field).' must be an valid email',
-                    'equals' => $this->formatErrorField($field).' must equal '.$this->formatErrorField('password'),
-                    'notEmpty' => $this->formatErrorField($field).' is required',
-                    'length' => $this->formatErrorField($field).' length must be greater than or equal to {{minValue}}',
-                    'phone' => $this->formatErrorField($field).' must be a valid phone number'
-                ]);
+                $this->errors[$field] = $e->getMessages();
             }
         }
 
