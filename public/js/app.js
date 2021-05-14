@@ -23,6 +23,11 @@
     // The App Initializer. It brings the UI and Storage Controllers together
     const App = (function(ui, storage) {
 
+        // All event listeners go here
+        function loadEventListeners() {
+
+        }
+
         return {
 
             init() {
