@@ -79,6 +79,7 @@ class Validator
     private function formatErrorField($field)
     {
         $var = str_replace('_', ' ', $field);
+        
         return ucfirst($var);
     }
 }
