@@ -61,6 +61,21 @@ class Validator
         return $this->errors;
     }
 
+    public function getFirstErrors()
+    {
+        if ($this->failed()) {
+            $firstErrors = [];
+
+            foreach ($this->errors as $key => $value) {
+                $firstErrors[$key] = array_shift($value);
+            }
+
+            return $firstErrors;
+        }
+
+        return null;
+    }
+
     private function formatErrorField($field)
     {
         $var = str_replace('_', ' ', $field);
