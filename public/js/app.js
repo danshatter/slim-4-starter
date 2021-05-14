@@ -14,8 +14,7 @@
     const Storage = (function() {
 
         return {
-
-            
+   
         }
 
     })();
