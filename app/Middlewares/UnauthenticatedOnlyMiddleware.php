@@ -3,7 +3,7 @@
 namespace App\Middlewares;
 
 use Psr\Http\Server\{MiddlewareInterface, RequestHandlerInterface as Handler};
-use Psr\Http\Message\{ResponseFactoryInterface, ResponseInterface, ServerRequestInterface as Request};
+use Psr\Http\Message\{ServerRequestInterface as Request, ResponseInterface, ResponseFactoryInterface};
 use Slim\Interfaces\RouteParserInterface as RouteParser;
 
 class UnauthenticatedOnlyMiddleware implements MiddlewareInterface

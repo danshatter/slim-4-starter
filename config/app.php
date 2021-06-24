@@ -1,7 +1,7 @@
 <?php
 
-use Slim\Factory\AppFactory;
 use DI\ContainerBuilder;
+use Slim\Factory\AppFactory;
 
 // Container Initialization
 $builder = new ContainerBuilder;

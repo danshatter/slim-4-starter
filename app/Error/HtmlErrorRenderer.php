@@ -2,8 +2,8 @@
 
 namespace App\Error;
 
-use Slim\Error\AbstractErrorRenderer;
 use Throwable;
+use Slim\Error\AbstractErrorRenderer;
 
 class HtmlErrorRenderer extends AbstractErrorRenderer
 {

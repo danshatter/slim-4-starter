@@ -3,7 +3,7 @@
 namespace App\Middlewares;
 
 use Psr\Http\Server\{MiddlewareInterface, RequestHandlerInterface as Handler};
-use Psr\Http\Message\{ResponseInterface, ServerRequestInterface as Request};
+use Psr\Http\Message\{ServerRequestInterface as Request, ResponseInterface};
 use App\Models\User;
 
 class AuthenticationMiddleware implements MiddlewareInterface

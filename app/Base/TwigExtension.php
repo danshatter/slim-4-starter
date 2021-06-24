@@ -3,9 +3,9 @@
 namespace App\Base;
 
 use Twig\Extension\GlobalsInterface;
-use App\Base\AbstractTwig;
 // use Twig\TwigFilter;
 // use Twig\TwigFunction;
+use App\Base\AbstractTwig;
 
 class TwigExtension extends AbstractTwig implements GlobalsInterface
 {

@@ -3,7 +3,7 @@
 namespace App\Middlewares;
 
 use Psr\Http\Server\{Middleware, RequestHandlerInterface as Handler};
-use Psr\Http\Message\{ResponseFactoryInterface, ResponseInterface, ServerRequestInterface as Request};
+use Psr\Http\Message\{ServerRequestInterface as Request, ResponseInterface, ResponseFactoryInterface};
 use Slim\Flash\Messages as Flash;
 use Slim\Interfaces\RouteParserInterface as RouteParser;
 
@@ -31,7 +31,7 @@ class LoggedInOnlyMiddleware implements MiddlewareInterface {
             $_SESSION['next'] = $request->getRequestTarget();
 
             return $this->responseFactory->createResponse()
-                                        ->withHeader('Location', $this->routeParser->urlFor('register'))
+                                        ->withHeader('Location', $this->routeParser->urlFor('login'))
                                         ->withStatus(302);
         }
 

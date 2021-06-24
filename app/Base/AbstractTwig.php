@@ -2,9 +2,9 @@
 
 namespace App\Base;
 
+use Twig\Extension\AbstractExtension;
 use Slim\Flash\Messages as Flash;
 use Slim\Csrf\Guard as Csrf;
-use Twig\Extension\AbstractExtension;
 
 abstract class AbstractTwig extends AbstractExtension
 {
