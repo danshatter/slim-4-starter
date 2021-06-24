@@ -4,8 +4,6 @@ session_start();
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-use Slim\Factory\AppFactory;
-use DI\ContainerBuilder;
 use Dotenv\Dotenv;
 
 // Environmental Variables Initialization
@@ -17,19 +15,8 @@ if ($_ENV['APP_ENV'] === 'production') {
     ini_set('display_errors', '0');
 }
 
-// Container Initialization
-$builder = new ContainerBuilder;
-$container = $builder->build();
-
-// Application Initialization
-AppFactory::setContainer($container);
-$app = AppFactory::create();
-
-// Route Parser
-$routeParser = $app->getRouteCollector()->getRouteParser();
-
-// Response Factory for middlewares
-$responseFactory = $app->getResponseFactory();
+// The Slim Application Initialization and Application Extracts
+require_once __DIR__.'/../config/app.php';
 
 // Container Dependencies
 require_once __DIR__.'/../config/container.php';
