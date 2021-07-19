@@ -15,4 +15,13 @@ class ViewController
         $this->view = $view;
     }
 
+    public function index(Request $request, Response $response)
+    {
+        $version = \Slim\App::VERSION;
+
+        $response->getBody()->write($version);
+
+        return $response;
+    }
+
 }

@@ -22,8 +22,5 @@ require_once __DIR__.'/../config/database.php';
 // Global Middleware Stack
 require_once __DIR__.'/../config/middleware.php';
 
-// API Routes (For JavaScript)
-require_once __DIR__.'/../routes/api.php';
-
 // Web Routes
 require_once __DIR__.'/../routes/web.php';
